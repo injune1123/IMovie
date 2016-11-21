@@ -77,6 +77,55 @@ def insertM():
 
   return jsonify(data="ok")
 
+
+@app.route('/getmid', methods=['GET'])
+def getmid():
+  uid = request.args.get('uid', 0, type=int)
+  mid = request.args.get('mid', "", type=str)
+  print uid, mid
+  data={}
+  try:
+    cursor = g.conn.execute("select * from movie where MID=%s",mid)
+    result = cursor.fetchone()
+    if result != None:
+      data["mid"]=result["mid"]
+      data["name"]=result["name"]
+      data["mlink"]=result["mlink"]
+      data["mimg"]=result["mimg"]
+  except Exception as e:
+          print e
+
+
+  try:
+    ret =[]
+    cursor = g.conn.execute("select movie.*,movie_tag.tid from movie_tag, movie where movie.mid=movie_tag.mid and movie.mid <> %s and movie_tag.tid in (select tid from movie_tag as t where t.mid=%s)",mid,mid)
+    for result in cursor:
+      in_data={}
+      in_data["mid"]=result["mid"]
+      in_data["name"]=result["name"]
+      in_data["mlink"]=result["mlink"]
+      in_data["mimg"]=result["mimg"]
+      tid = result["tid"]
+      ret.append(in_data)
+  except Exception as e:
+          print e
+  
+  try:
+    cursor = g.conn.execute("select movie.* from movie_tag, movie where movie.mid=movie_tag.mid and movie_tag.tid <> %s order by random() limit 2",tid)
+    for result in cursor:
+      in_data={}
+      in_data["mid"]=result["mid"]
+      in_data["name"]=result["name"]
+      in_data["mlink"]=result["mlink"]
+      in_data["mimg"]=result["mimg"]
+      ret.append(in_data)
+  except Exception as e:
+          print e
+  
+  data["rec_list"] = ret
+
+  return jsonify(data=data)
+
 @app.route('/')
 def hello_world():
     return render_template('home.html')
