@@ -1,0 +1,10 @@
+body{
+	background-color: #000000;
+};
+
+
+#logged-in-user-info a{
+	color: red;
+	display: inline-block;
+	width: 4%;
+}
