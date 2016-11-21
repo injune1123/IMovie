@@ -6,22 +6,24 @@
 </head>
 <body>
 	<main>
-		<div class="hint"></div>
-		<form action="/adduser" method="post">
+		<form action="/adduser" method="POST">
 			<div class="container">
-			    <label><b>Username</b></label>
-			    <input id="sign-up-username" type="text" placeholder="Your Username" name="uname" required>
-
-			    <label><b>Password</b></label>
-			    <input id="sign-up-password" type="password" placeholder="Your Password" name="psw" required>
-
-			    <label><b>Confirm Password</b></label>
-			    <input type="password" placeholder="Your Password" name="psw" required>
-
-			    <button type="submit" id="sign-up-button">Sign Up</button>
+                <div class="form-group">
+                    <label><b>Username</b></label>
+                    <input class="form-control" type="text" placeholder="Your Username" name="UName">
+                    <label><b>Password</b></label>
+                    <input class="form-control" placeholder="Your Password" name="PSW">
+                    <label><b>Confirm Password</b></label>
+                    <input class="form-control" placeholder="Your Password" name="RPSW">
+                    <label><b>Email</b></label>
+                    <input class="form-control" placeholder="Your email" name="EMAIL">
+                </div>
+                <button type="submit" class="btn btn-info">Sign up</button>
  			</div>
-
 		</form>
+        {% if msg %}
+      <h1>{{ msg }}!</h1>
+        {% endif %}
 	</main>
 </body>
 <script>
