@@ -1,16 +1,22 @@
-// toggle movie like
+// get User info
 
-var likeMainVideoIcon = document.getElementById("html-main-video-section").getElementsByClassName('fa-heart-o')[0];
-var dislikeMainVideoIcon = document.getElementById("html-main-video-section").getElementsByClassName('fa-heart')[0];
+// var currentUser = getUser();
+
 
 // should get it from db
 var likeMainVideo = false;
+var thumbUp = false;
+var thumbDown= false;
+
+
+// toggle movie like
+var likeMainVideoIcon = document.getElementById("html-main-video-section").getElementsByClassName('fa-heart-o')[0];
+var dislikeMainVideoIcon = document.getElementById("html-main-video-section").getElementsByClassName('fa-heart')[0];
 
 var addToggleIconListener = function(icon){
 	icon.addEventListener("click", function(){
-		likeMainVideo = !likeMainVideo;
-console.log(likeMainVideo);
-        
+	likeMainVideo = !likeMainVideo;
+        console.log(likeMainVideo);
 	});
 }
 
@@ -18,9 +24,13 @@ addToggleIconListener(likeMainVideoIcon,likeMainVideo );
 addToggleIconListener(dislikeMainVideoIcon, likeMainVideo);
 
 console.log(likeMainVideo);
+
+
+
+
+
+
 // send movie like to database
-
-
 
 
 //add interval
