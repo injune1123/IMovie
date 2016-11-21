@@ -8,7 +8,7 @@ tmpl_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
 app = Flask(__name__, template_folder=tmpl_dir)
 
 #connect to database
-DATABASEURI = "postgresql://localhost:5432/postgres"
+DATABASEURI = "postgresql://jz2685:d88tn@104.196.175.120:5432/postgres"
 engine = create_engine(DATABASEURI)
 
 @app.before_request
@@ -34,12 +34,12 @@ def teardown_request(exception):
   """
   try:
     g.conn.close()
-  except Exception as e:
+  except Exception:
     pass
 
 @app.route('/')
-def hello_world():
-    return render_template('home.html')
+def welcome():
+    return render_template('welcome.html')
 
 @app.route('/signup')
 def signup():
@@ -47,29 +47,26 @@ def signup():
 
 @app.route('/signin')
 def signin():
-	return render_template('signin.html')
+	return render_template('sign-in.html')
 
-
-'''
-@app.route('/')
-def signin():
-	return render_template('signin.html')
+@app.route('/home')
+def home():
+    return render_template('home.html')
 
 ##add a new user
 @app.route('/adduser', methods=['POST'])
 def adduser():
     	try:
-		PID = str(request.form['PID'])
-		SHP = str(request.form['SHP'])
-		print PID, SHP
-
-		g.conn.execute("INSERT INTO Posses_Stats(SID,PID) VALUES (\'" + PID + "\',\'" + SHP + "\');")
+		UNAME = str(request.form['uname'])
+		PSW = str(request.form['psw'])
+		print UNAME,PSW
+		g.conn.execute("INSERT INTO USER(UNAME,PSW) VALUES (\'" + UNAME + "\',\'" + PSW + "\');")
 		return render_template("signup.html")
-	except Exception, e:
+
+	except Exception:
 		print traceback.print_exc()
 		return 'False'
 
-'''
 if __name__ == '__main__':
     import click
     @click.command()
@@ -78,16 +75,7 @@ if __name__ == '__main__':
     @click.argument('HOST', default='0.0.0.0')
     @click.argument('PORT', default=8111, type=int)
     def run(debug, threaded, host, port):
-        """
-        This function handles command line parameters.
-        Run the server using
 
-            python server.py
-
-        Show the help text using
-
-            python server.py --help
-        """
         HOST, PORT = host, port
         print "running on %s:%d" % (HOST, PORT)
         app.run(host=HOST, port=PORT, debug=debug, threaded=threaded)
