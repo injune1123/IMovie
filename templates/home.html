@@ -4,22 +4,34 @@
 <head>
 	<meta charset="UTF-8">
 	<title>YourMovie</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/static/css/stylish-portfolio.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+	
 	<link rel="stylesheet" href="../static/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../static/css/home.css">
+
 </head>
 <body>
-    <nav style=" width: 100%; height: 40px;" >
-	<input style=" width: 90%; height: 100%" type="text" id="site-wide-search" placeholder="search">
 	<img src="" alt="" id="avatar"/>
 	
-	<div id="logged-in-user-info" style="display: inline-block; float: right; width: 8%; height: 100%"; background-color: white">
+	<div id="logged-in-user-info" style="display: inline-block; float: right; position: relative; padding-bottom: 1%;  bottom: 10px;">
 		<a href="" style="color:#ffffff">Log Out</a>	
 	</div>
+
+    <nav style=" width: 100%; height: 40px;  margin-bottom: 1%" >
+	<input style=" width: 100%; height: 100%; font-size: 18px; box-sizing: border-box; padding-left: 10px"	 type="text" id="site-wide-search" placeholder="search">
 	</nav>
 	<br/>
 	<br/>
 
-	<main style=" width: 70%; display: inline-block;" id="html-main-video-section">
+	<main style=" width: 78%; display: inline-block;" id="html-main-video-section">
 		<video width="100%" id="html-main-video" controls>
 			<source  src="../static/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
 			    Your browser does not support HTML5 video.
@@ -40,7 +52,7 @@
 			</span>
  		</section>
 	</main>
- 	<aside style=" float: right; width: 26%; padding-left:2%; padding-right:2%">
+ 	<aside style=" float: right; width: 20%">
  		<div>
 	 		<a href="./" class="recommended-movie">
 	 			<img src="http://placehold.it/250x150" alt="">
@@ -58,16 +70,20 @@
  			</a>	
  		</div>
  		<div>
- 			<img src="http://placehold.it/250x150" alt="">
- 			<span>
- 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!
- 			</span>
+ 			<a href="" class="recommended-movie" >
+	 			<img src="http://placehold.it/250x150" alt="">
+	 			<span>
+	 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!
+	 			</span>
+ 			</a>
  		</div>
  		<div>
- 			<img src="http://placehold.it/250x150" alt="">
- 			<span>
- 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!
- 			</span>
+ 			<a href="" class="recommended-movie" >
+	 			<img src="http://placehold.it/250x150" alt="">
+	 			<span>
+	 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!
+	 			</span>
+ 			</a>
  		</div>
  	</aside>
 	<script src="../static/js/home.js"></script>

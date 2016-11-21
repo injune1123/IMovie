@@ -25,3 +25,11 @@ div#logged-in-user-info{
 text-decoration: none;
 
 }
+
+aside img{
+	width: 100%;
+}
+aside span{
+	display: inline-block;
+	width: 100%
+}
