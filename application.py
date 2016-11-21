@@ -8,7 +8,7 @@ tmpl_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
 app = Flask(__name__, template_folder=tmpl_dir)
 
 #connect to database
-DATABASEURI = "postgresql://jz2685:d88tn@104.196.175.120:5432/postgres"
+DATABASEURI = "postgresql://localhost:5432/postgres"
 engine = create_engine(DATABASEURI)
 
 @app.before_request
@@ -39,16 +39,18 @@ def teardown_request(exception):
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return render_template('home.html')
 
 @app.route('/signup')
 def signup():
-	return render_template('signup.html')
+	return render_template('sign-up.html')
 
 @app.route('/signin')
 def signin():
 	return render_template('signin.html')
 
+
+'''
 @app.route('/')
 def signin():
 	return render_template('signin.html')
@@ -67,7 +69,7 @@ def adduser():
 		print traceback.print_exc()
 		return 'False'
 
-
+'''
 if __name__ == '__main__':
     import click
     @click.command()
