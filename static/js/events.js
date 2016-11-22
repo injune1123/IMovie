@@ -36,7 +36,7 @@ function getVid(mid) {
 	  			a.appendChild(p);
 	  			rec.appendChild(a);
 	  		}
-	  		
+	  		vid.play();
 
 	  });
 }
