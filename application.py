@@ -16,10 +16,10 @@ user =  "cl3469"
 DATABASEURI = "postgresql://%s:%s@%s/postgres" % (user, password, host)
 
 engine = create_engine(DATABASEURI)
-import logging
+# import logging
 
-logging.basicConfig()
-logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
+# logging.basicConfig()
+# logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
 @app.before_request
 def before_request():
   """

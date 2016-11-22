@@ -8,14 +8,14 @@
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="/static/css/stylish-portfolio.css" rel="stylesheet">
+    <link href="/css/stylish-portfolio.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
 	
-	<link rel="stylesheet" href="../static/css/font-awesome.min.css">
-	<link rel="stylesheet" href="../static/css/home.css">
+	<link rel="stylesheet" href="/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/css/home.css">
 
 </head>
 <body>
@@ -32,15 +32,12 @@
 	<br/>
 
 
-	<main style=" width: 70%; display: inline-block;">
-		<video width="100%" controls>
-			<source  src="https://s3-us-west-2.amazonaws.com/sadmovie/Wreck-It-Ralph-You-Really-Are-A-Bad-Guy-Clip-(HD)-USHi4s_rHqQ.mp4" id="html-main-video" type="video/mp4">
+	<main style=" width: 70%; display: inline-block;" id="html-main-video-section">
+		<video width="100%" controls id="html-main-video">
+			<source  src="" type="video/mp4">
  		</video>
- 		<p>Wreck-It Ralph(2012)</p>
- 		<section>
- 			<textarea style="width:100%" name="" id="" cols="30" rows="10"></textarea>
-
-
+ 		<p id="main_video_name">Wreck-It Ralph(2012)</p>
+ 
 
  		<section id="main-video-icon-session">
  			<span>
@@ -57,7 +54,7 @@
 			</span>
  		</section>
 	</main>
- 	<aside style=" float: right; width: 20%">
+ 	<aside style=" float: right; width: 26%; padding:2%"  style="display:none" id="recommendation-section">
  		<div>
 
  			<video width="100%" controls>
@@ -93,7 +90,10 @@
 
  		</div>
  	</aside>
-	<script src="../static/js/home.js"></script>
+ 	<script src="/js/jquery.min.js"></script>
+ 	<script src="/js/util.js"></script>
+	<script src="/js/home.js"></script>
+	<script src="/js/events.js"></script>
 
 </body>
 </html>
