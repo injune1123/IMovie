@@ -7,8 +7,11 @@ class HomePage extends React.Component {
 			<div className="home">
 				<div className="hero">
 					<h1>See What You Love</h1>
-					<p>Your Personalized Movie Land.</p>
-					<Link to="about" className="btn btn-primary btn-lg">Learn more</Link>
+					<span>Your Personalized Movie Land.</span>
+					<Link to="about">Learn more</Link>
+					<div>
+					<Link to="movie" className="btn btn-primary btn-lg">Sign In to Watch</Link>
+					</div>
 				</div>
 			</div>
 		);
