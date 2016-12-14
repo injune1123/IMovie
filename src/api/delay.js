@@ -1,1 +1,1 @@
-delay.js
+export default 1000;

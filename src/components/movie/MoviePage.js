@@ -6,39 +6,21 @@ import * as movieActions from '../../actions/movieActions';
 class MoviePage extends React.Component{
 	constructor(props, context){
 		super(props, context);
-		this.state = {
-			movie: { title: "" }
-		};
-		this.onTitleChange = this.onTitleChange.bind(this);
-		this.onClickSave = this.onClickSave.bind(this);
-	}
-	onTitleChange(event){
-		const movie = this.state.movie;
-		movie.title = event.target.value;
-		this.setState({movie: movie});
-	}
-	onClickSave(){
-		this.props.actions.createMovie(this.state.movie);
 	}
 	movieRow(movie, index){
-		return (<div key={index}>{movie.title}</div>);
+		return (<div key={index} className="movie">
+
+			<p>{movie.name}</p>
+			<img src={movie.snapshot} alt="" height="100" width="200"/>
+
+		</div>	
+		);
 	}
 	render(){
 		return(
 			<div>
 				<h1>Movies recommended for you</h1>
 				{this.props.movies.map(this.movieRow)}
-				<h2>Add Movie</h2>
-				<input
-					type="text"
-					onChange={this.onTitleChange}
-					value={this.state.movie.title}
-				/>
-				<input
-					type="submit"
-					value="Save"
-					onClick={this.onClickSave}
-				/>
 			</div>
 		);
 	}

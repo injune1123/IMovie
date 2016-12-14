@@ -10,6 +10,11 @@ const port = 3000;
 const app = express();
 const compiler = webpack(config);
 
+// serve static image
+// app.use(express.static(path.join(__dirname)));
+
+// app.use('/static', express.static(path.join(__dirname, '../src/assets')))
+
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
   publicPath: config.output.publicPath

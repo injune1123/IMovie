@@ -1,0 +1,9 @@
+/*#app{
+	background-image: url('https://melsj.files.wordpress.com/2014/04/galaxy_background_images_wallpaper_hd_wallpaper_background_flooxscom-1.jpg');
+	height: 100vh;
+}*/
+
+.movie{
+	display: inline-block;
+	padding: 10px;
+}
