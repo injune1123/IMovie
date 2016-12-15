@@ -26,18 +26,29 @@ class moviesPage extends React.Component{
 
 		return(
 		<div>
-			<h1>Movies</h1>
+			{/* <h1>Movies</h1>
 			<input type="submit"
 				value="Add Movie"
 				className="btn btn-primary"
 				onClick={this.redirectToAddMoviePage}
 			/>
 			<MovieList movies={movies}/>
-			{/* <div>
+
+			*/}
+
+
+			 <div>
+
+			 <div class="container">
+			    <div id="slider1_container">
+			        Silder TO SHOW MOVIES
+			    </div>
+			</div>
+
 			 	<h1>Movies recommended for you</h1>
 			 	{this.props.movies.map(this.movieRow)}
 			 </div>
-			*/}
+			
 		</div>);
 	}
 }
