@@ -15,6 +15,8 @@ const store = configureStore();
 store.dispatch(loadMovies());
 store.dispatch(loadAuthors());
 
+
+
 render(
 	<Provider store={store}>
 		<Router history={browserHistory} routes={routes}/>

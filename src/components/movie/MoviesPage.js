@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as movieActions from '../../actions/movieActions';
 import MovieList from './MovieList';
+import MovieCarousel from './MovieCarousel';
 import {browserHistory} from 'react-router';
 
 class moviesPage extends React.Component{
@@ -33,21 +34,12 @@ class moviesPage extends React.Component{
 				onClick={this.redirectToAddMoviePage}
 			/>
 			<MovieList movies={movies}/>
-
 			*/}
-
-
-			 <div>
-
-			 <div class="container">
-			    <div id="slider1_container">
-			        Silder TO SHOW MOVIES
-			    </div>
+			<MovieCarousel/>
+			<div>	
+				<h1>Movies recommended for you</h1>
+				{this.props.movies.map(this.movieRow)}
 			</div>
-
-			 	<h1>Movies recommended for you</h1>
-			 	{this.props.movies.map(this.movieRow)}
-			 </div>
 			
 		</div>);
 	}
