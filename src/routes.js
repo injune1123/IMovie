@@ -4,14 +4,14 @@ import App from './components/App';
 import HomePage from './components/home/HomePage';
 import AboutPage from './components/about/AboutPage';
 import MoviesPage from './components/movie/MoviesPage';
-import ManageMoviePage from './components/movie/ManageMoviePage';
+import WatchMoviePage from './components/movie/WatchMoviePage';
 
 export default(
 	<Route path="/" component={App}>
 		<IndexRoute component={HomePage} />
 		<Route path="movies" component={MoviesPage} />
-		<Route path="movie" component={ManageMoviePage} />
-		<Route path="movie/:id" component={ManageMoviePage} />
+		<Route path="movie" component={WatchMoviePage} />
+		<Route path="movie/:id" component={WatchMoviePage} />
 		<Route path="about" component={AboutPage} />
 	</Route>
 );
