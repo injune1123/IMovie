@@ -17,28 +17,28 @@ class WatchMoviePage extends React.Component{
 	}
 
 	render() {
-	    return (
+		return (
 
-        <Video controls autoPlay loop muted
-        	className="current-movie"
-            poster="http://sourceposter.jpg"
-            onCanPlayThrough={() => {
-                // Do stuff
-            }}>
-            <source src="https://s3-us-west-2.amazonaws.com/sadmovie/Toy-Story-3-Bonnie-Memorable-Moments-fJ3JIEQtxyU.mp4" type="video/mp4" />
-        
-           <Overlay />
-            <Controls>
-                <Play />
-                <Seek />
-                <Time />
-                <Mute />
-                <Fullscreen />
-            </Controls>
+		<Video controls autoPlay loop muted
+			className="current-movie"
+			poster="http://sourceposter.jpg"
+			onCanPlayThrough={() => {
+				// Do stuff
+			}}>
+			<source src="https://s3-us-west-2.amazonaws.com/sadmovie/Toy-Story-3-Bonnie-Memorable-Moments-fJ3JIEQtxyU.mp4" type="video/mp4" />
+		
+		   <Overlay />
+			<Controls>
+				<Play />
+				<Seek />
+				<Time />
+				<Mute />
+				<Fullscreen />
+			</Controls>
 
-        </Video>
+		</Video>
 
-	    );
+		);
 	}	
 }
 

@@ -5,6 +5,10 @@ import HomePage from './components/home/HomePage';
 import AboutPage from './components/about/AboutPage';
 import MoviesPage from './components/movie/MoviesPage';
 import WatchMoviePage from './components/movie/WatchMoviePage';
+import SigninPage from './components/signin/SigninPage';
+import SignupPage from './components/signup/SignupPage';
+import UserProfilePage from './components/user/UserProfilePage';
+
 
 export default(
 	<Route path="/" component={App}>
@@ -13,5 +17,9 @@ export default(
 		<Route path="movie" component={WatchMoviePage} />
 		<Route path="movie/:id" component={WatchMoviePage} />
 		<Route path="about" component={AboutPage} />
+		<Route path="signin" component={SigninPage} />
+		<Route path="signup" component={SignupPage} />
+		<Route path="me" component={UserProfilePage} />
+
 	</Route>
 );

@@ -5,19 +5,17 @@ import * as movieActions from '../../actions/movieActions';
 import MovieList from './MovieList';
 import MovieCarousel from './MovieCarousel';
 import {browserHistory} from 'react-router';
+import RecommendedMovie from './RecommendedMovie';
 
 class moviesPage extends React.Component{
 	constructor(props, context){
 		super(props, context);
-		this.redirectToAddMoviePage = this.redirectToAddMoviePage.bind(this)
+		this.redirectToAddMoviePage = this.redirectToAddMoviePage.bind(this);
 	}
 	movieRow(movie, index){
 		return (
-		<div key={index} className="movie">
-			<p>{movie.name}</p>
-			<img src={movie.snapshot} alt="" height="100" width="200"/>
-		</div>	
-		);
+		<RecommendedMovie movie={movie}/>
+	);
 	}
 	redirectToAddMoviePage(){
 		browserHistory.push('/movie');

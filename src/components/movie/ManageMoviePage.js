@@ -19,7 +19,7 @@ class ManageMoviePage extends React.Component{
 	}
 	componentWillReceiveProps(nextProps){
 		if(this.props.movie.vid != nextProps.movie.vid){
-			this.setState({movie: Object.assign({}, nextProps.movie)})
+			this.setState({movie: Object.assign({}, nextProps.movie)});
 		}
 	}
 	updateMovieState(event){

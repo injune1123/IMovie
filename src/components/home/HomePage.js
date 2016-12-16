@@ -10,7 +10,7 @@ class HomePage extends React.Component {
 					<span>Your Personalized Movie Land.</span>
 					<Link to="about">Learn more</Link>
 					<div>
-					<Link to="movies" className="btn btn-primary btn-lg">Sign In to Watch</Link>
+					<Link to="signin" className="btn btn-primary btn-lg">Sign In to Watch</Link>
 					</div>
 				</div>
 			</div>

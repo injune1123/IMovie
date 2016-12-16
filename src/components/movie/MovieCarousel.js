@@ -3,9 +3,8 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as movieActions from '../../actions/movieActions';
 import MovieList from './MovieList';
-import {browserHistory} from 'react-router';
+import {browserHistory, Link} from 'react-router';
 import {Carousel, Button} from 'react-bootstrap';
-import {Link} from 'react-router';
 
 class MovieCarousel extends React.Component{
 	constructor(props, context){
