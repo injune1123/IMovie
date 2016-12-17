@@ -2,10 +2,24 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 	<title>Movie</title>
 </head>
 <body>
  	<div id="app"></div>
 	<script src="/bundle.js"></script>
-</body>
+	<script type="text/javascript" charset="utf-8">
+	  var socket = io('http://54.221.40.5:6888');
+	  console.log('new connect');
+      data = {};
+      data['uid'] = "3333";
+      data['mid'] = 6565733;
+      data['epoch'] = new Date().getTime();
+      socket.emit('click_video', data);
+      socket.on('message', function(data){
+        res=JSON.parse(data);
+        console.log(data);
+        });
+    </script>
+</body>	
 </html>
