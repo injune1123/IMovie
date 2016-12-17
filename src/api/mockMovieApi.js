@@ -10,8 +10,8 @@ const movies = [
     "category": "Romance",
     "snapshot": "https://s3-us-west-2.amazonaws.com/sadmovie/no_string.jpg",
     "name": "No Strings Attached(2011)",
-	"vid": "9yVrWNaBqpk",
-	"playableUrl": "http://www.columbia.edu/",    
+    "vid": "9yVrWNaBqpk",
+    "playableUrl": "http://www.columbia.edu/",    
     "taskid": "79b264b70747327853bfa3979013faca",
     "authorId": "cory-house"
 

@@ -20,7 +20,7 @@ class RecommendedMovie extends React.Component{
 		<div className="movie">	
 			<div  onClick={this.open}>
 				<p>{this.props.movie.name}</p>
-				<img src={this.props.movie.snapshot} alt="" height="100" width="200"/>
+				<img src={this.props.movie.mimg} alt="" height="100" width="200"/>
 			</div>
 
 			<Modal show={this.state.showModal} onHide={this.close}>

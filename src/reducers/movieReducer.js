@@ -4,6 +4,7 @@ import initialState from './initialState';
 export default function courseReducer(state = initialState.movies, action){
 	switch(action.type){
 		case types.LOAD_MOVIES_SUCCESS:
+			console.log("action", action);
 			return action.movies;
 
 		case types.CREATE_MOVIE_SUCCESS:
