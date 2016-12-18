@@ -32,7 +32,7 @@ class WatchMoviePage extends React.Component{
 		  	that.play();
 		    // Play the video
 		    currentVideo2.play();
-		   	socket.emit('click_video', {"uid": "yiyi", "epoch": new Date().getTime()});
+		   	socket.emit('click_video', {"uid": "3333", 'mid':"catchpaly","epoch": new Date().getTime()});
 
 		    // Update the button text to 'Pause'
 		    playButton.innerHTML = "Pause";
@@ -40,7 +40,7 @@ class WatchMoviePage extends React.Component{
 		    // Pause the video
 		    currentVideo2.pause();
 		  	that.play();
-		   	socket.emit('click_video', {"uid": "yiyi", "epoch": new Date().getTime()});
+		   	socket.emit('click_video', {"uid": "3333", 'mid':"catchpause","epoch": new Date().getTime()});
 
 		    // Update the button text to 'Play'
 		    playButton.innerHTML = "Play";
