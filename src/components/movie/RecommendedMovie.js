@@ -8,6 +8,8 @@ class RecommendedMovie extends React.Component{
 		this.state = {showModal: false};
 		this.close = this.close.bind(this);
 		this.open = this.open.bind(this);
+		console.log('get')
+		console.log(this.props.movie)
 	}
 	close() {
 		this.setState({ showModal: false });
@@ -23,11 +25,11 @@ class RecommendedMovie extends React.Component{
 			</div>
 			<Modal show={this.state.showModal} onHide={this.close} className="browse-movie-modal">
 			  <Modal.Header closeButton>
-				<Modal.Title>Modal heading</Modal.Title>
+				<Modal.Title>{this.props.movie.name}</Modal.Title>
 			  </Modal.Header>
 			  <Modal.Body>
-				<h4>Text in a modal</h4>
-				<hr />
+			  	<img src={this.props.movie.mimg} alt="" width="200px" height="220px"/>
+			  	<Button >Watch</Button>	
 			  </Modal.Body>
 			  <Modal.Footer>
 				<Button onClick={this.close}>Close</Button>
