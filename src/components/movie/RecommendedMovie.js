@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import {Carousel, Button, Modal} from 'react-bootstrap';
+import {browserHistory, Link} from 'react-router';
 
 class RecommendedMovie extends React.Component{
 
@@ -8,8 +9,6 @@ class RecommendedMovie extends React.Component{
 		this.state = {showModal: false};
 		this.close = this.close.bind(this);
 		this.open = this.open.bind(this);
-		console.log('get')
-		console.log(this.props.movie)
 	}
 	close() {
 		this.setState({ showModal: false });
@@ -29,10 +28,12 @@ class RecommendedMovie extends React.Component{
 			  </Modal.Header>
 			  <Modal.Body>
 			  	<img src={this.props.movie.mimg} alt="" width="200px" height="220px"/>
-			  	<Button >Watch</Button>	
 			  </Modal.Body>
 			  <Modal.Footer>
 				<Button onClick={this.close}>Close</Button>
+				<Link to="movie">        
+        		<Button bsStyle="info">Watch Now</Button>
+        		</Link>
 			  </Modal.Footer>
 			</Modal>
 		</div>
