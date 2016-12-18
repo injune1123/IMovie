@@ -164,6 +164,14 @@ nav a, nav span{
 }
 
 
+#cur-video{
+  width: 97vw;
+}
+
+#watch-video-page{
+  min-height: 100vh;
+}
+
 /* iPad in portrait
  STYLES GO HERE */
 @media only screen 

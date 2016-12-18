@@ -17,6 +17,8 @@ class WatchMoviePage extends React.Component{
 		};
 	}
 	componentDidMount(){
+
+		alert(this.props.movieId);
 		socket.on('message', function(data){
 	        res=JSON.parse(data);
 	        console.log(data);
@@ -77,9 +79,9 @@ class WatchMoviePage extends React.Component{
 
 	render() {
 		return (
-			<div>
-				<video id="cur-video" width="400" controls="true">
-				  <source src="https://s3-us-west-2.amazonaws.com/sadmovie/Toy-Story-3-Bonnie-Memorable-Moments-fJ3JIEQtxyU.mp4" type="video/mp4"/>
+			<div id="watch-video-page">
+				<video id="cur-video" controls="true">
+				  <source src={sessionStorage.currentMovieLink} type="video/mp4"/>
 				  Your browser does not support HTML5 video.
 				</video>
 			</div>
@@ -87,4 +89,12 @@ class WatchMoviePage extends React.Component{
 	}	
 }
 
-export default WatchMoviePage;
+function mapStateToProps(state, ownProps) {
+  const movieId = ownProps.params.id; // from the path `/course/:id`
+
+  return {
+    movieId: movieId,
+  };
+}
+
+export default connect(mapStateToProps)(WatchMoviePage);

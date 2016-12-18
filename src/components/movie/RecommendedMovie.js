@@ -9,12 +9,17 @@ class RecommendedMovie extends React.Component{
 		this.state = {showModal: false};
 		this.close = this.close.bind(this);
 		this.open = this.open.bind(this);
+		this.saveCurMovieInfo = this.saveCurMovieInfo.bind(this);
 	}
 	close() {
 		this.setState({ showModal: false });
 	}
 	open() {
 		this.setState({ showModal: true });
+	}
+	saveCurMovieInfo(){
+		sessionStorage.currentMovieId=this.props.movie.mid;
+		sessionStorage.currentMovieLink=this.props.movie.mlink;
 	}
 	render() {
 		return (
@@ -31,8 +36,8 @@ class RecommendedMovie extends React.Component{
 			  </Modal.Body>
 			  <Modal.Footer>
 				<Button onClick={this.close}>Close</Button>
-				<Link to="movie">        
-        		<Button bsStyle="info">Watch Now</Button>
+				<Link to={'/movie/' + this.props.movie.mid}>        
+        		<Button bsStyle="info" onClick={this.saveCurMovieInfo} >Watch Now</Button>
         		</Link>
 			  </Modal.Footer>
 			</Modal>
