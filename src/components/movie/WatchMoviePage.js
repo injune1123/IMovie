@@ -10,65 +10,78 @@ class WatchMoviePage extends React.Component{
 		this.state = {
 			movie: Object.assign({}, props.movie),
 			errors:{},
-			saving: false
+			saving: false,
+			last_m: [],
+			start: 0,
+			uid:"amazing"
 		};
-
 	}
-
-	play(){
-		alert("hi");
-	}
-
 	componentDidMount(){
-		console.log("mounted");
-		var currentVideo1 = document.getElementById("cur-video-1");
-		var currentVideo2 = document.getElementById("cur-video-2");
-		var playButton = document.getElementById("play-pause");
+		socket.on('message', function(data){
+	        res=JSON.parse(data);
+	        console.log(data);
+        });
 
+		var currentVideo = document.getElementById("cur-video");
+		function seeked(){
+		        start = currentVideo.currentTime;
+		        currentVideo.play();
+		}
 		var that = this;
 
-		playButton.addEventListener("click", function() {
-		  if (currentVideo2.paused == true) {
-		  	that.play();
-		    // Play the video
-		    currentVideo2.play();
-		   	socket.emit('click_video', {"uid": "3333", 'mid':"catchpaly","epoch": new Date().getTime()});
+		{/*start of event functions*/}
 
-		    // Update the button text to 'Pause'
-		    playButton.innerHTML = "Pause";
-		  } else {
-		    // Pause the video
-		    currentVideo2.pause();
-		  	that.play();
-		   	socket.emit('click_video', {"uid": "3333", 'mid':"catchpause","epoch": new Date().getTime()});
+		function show(){
+		        that.state.last_m.push(currentVideo.currentTime);	
+		        console.log("show");
+	        
+		}
+		function play() {
 
-		    // Update the button text to 'Play'
-		    playButton.innerHTML = "Play";
+		        that.state.start = currentVideo.currentTime;
+		}
+		function pause() {
+			console.log("in pause");
 
-		  }
-		});
+	    	if(that.state.last_m[that.state.last_m.length-3] === undefined || that.state.start > that.state.last_m[that.state.last_m.length-3] ) return;
+	   		console.log("this.state", that.state.last_m);
+	    	var data ={};
+	    	var uid = that.state.uid;
 
-		currentVideo1.onplay = this.play;
+	 	   	data["watch_interval"]=that.state.start+":"+that.state.last_m[that.state.last_m.length-3];
+	       	data["mid"]="mid"; 
+	    	data["epoch"]=new Date().getTime();
+	    	data["uid"]='test'
+		    console.log("data", data);
+
+	    	socket.emit('watch_interval', data);
+
+	        that.setState({"last_m":[]});
+		}
+		function makeBig() {
+    		currentVideo.width = 560;
+		}
+		function makeSmall() {
+		    currentVideo.width = 320;
+		}
+		function makeNormal() {
+			currentVideo.width = 420;
+		}
+		
+		{/*end of event functions*/}
+		currentVideo.ontimeupdate = show;
+		currentVideo.onplay = play;
+		currentVideo.onpause= pause;
+		currentVideo.onseeked= seeked;
 	}
 
 	render() {
 		return (
 			<div>
-				<video id="cur-video-1" width="400" controls="true">
+				<video id="cur-video" width="400" controls="true">
 				  <source src="https://s3-us-west-2.amazonaws.com/sadmovie/Toy-Story-3-Bonnie-Memorable-Moments-fJ3JIEQtxyU.mp4" type="video/mp4"/>
 				  Your browser does not support HTML5 video.
 				</video>
-				<video id="cur-video-2" width="400">
-				  <source src="https://s3-us-west-2.amazonaws.com/sadmovie/Toy-Story-3-Bonnie-Memorable-Moments-fJ3JIEQtxyU.mp4" type="video/mp4"/>
-				  Your browser does not support HTML5 video.
-				</video>
-				<div id="video-controls">
-					<button type="button" id="play-pause">Play</button>
-					<input type="range" id="seek-bar" value="0"/>
-					<button type="button" id="mute">Mute</button>
-					<input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1"/>
-					<button type="button" id="full-screen">Full-Screen</button>
-				</div>
 			</div>
 		);
 	}	

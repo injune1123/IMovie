@@ -38,6 +38,6 @@ app.listen(port, function(err) {
   if (err) {
     console.log(err);
   } else {
-    open(`http://${ips[1]}:${port}`);
+    open(`http://localhost:${port}`);
   }
 });
