@@ -16,16 +16,36 @@ class WatchMoviePage extends React.Component{
 	}
 
 	play(){
-		alert("play");
+		alert("hi");
 	}
 
 	componentDidMount(){
 		console.log("mounted");
-		let currentVideo1 = document.getElementById("cur-video-1");
-		let currentVideo2 = document.getElementById("cur-video-12");
+		var currentVideo1 = document.getElementById("cur-video-1");
+		var currentVideo2 = document.getElementById("cur-video-2");
+		var playButton = document.getElementById("play-pause");
+
+		var that = this;
+
+		playButton.addEventListener("click", function() {
+		  if (currentVideo2.paused == true) {
+		  	that.play()
+		    // Play the video
+		    currentVideo2.play();
+		    // Update the button text to 'Pause'
+		    playButton.innerHTML = "Pause";
+		  } else {
+		    // Pause the video
+		    currentVideo2.pause();
+		  	that.play()
+
+		    // Update the button text to 'Play'
+		    playButton.innerHTML = "Play";
+
+		  }
+		});
 
 		currentVideo1.onplay = this.play;
-		currentVideo2.onplay = this.play;
 	}
 
 
@@ -36,11 +56,17 @@ class WatchMoviePage extends React.Component{
 				  <source src="https://s3-us-west-2.amazonaws.com/sadmovie/Toy-Story-3-Bonnie-Memorable-Moments-fJ3JIEQtxyU.mp4" type="video/mp4"/>
 				  Your browser does not support HTML5 video.
 				</video>
-	
 				<video id="cur-video-2" width="400">
 				  <source src="https://s3-us-west-2.amazonaws.com/sadmovie/Toy-Story-3-Bonnie-Memorable-Moments-fJ3JIEQtxyU.mp4" type="video/mp4"/>
 				  Your browser does not support HTML5 video.
 				</video>
+				<div id="video-controls">
+					<button type="button" id="play-pause">Play</button>
+					<input type="range" id="seek-bar" value="0"/>
+					<button type="button" id="mute">Mute</button>
+					<input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1"/>
+					<button type="button" id="full-screen">Full-Screen</button>
+				</div>
 			</div>
 		);
 	}	
