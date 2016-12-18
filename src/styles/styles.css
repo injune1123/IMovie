@@ -4,47 +4,122 @@
 }*/
 
 
-/*basic css*/
+/*basic css for phones*/
+
+
+/*general css*/
+html {
+    font-size: 112.5% /* This means 16px */
+}
+
 
 h1,h2,h3,h4,h5,h6,p,span,a, a:focus, a:hover {
   color: #fff;
 }{
   color: #ffffff;  
 }
+
 #app{
   background-color: #000000;
-  height: 100vh;
+}
+.hero{
+  background-image: url("https://assets.nflxext.com/ffe/siteui/vlv2/d1c33117-9d59-4974-a239-46e012b87e19/8c82aa63-eb6f-4569-a6b7-1ba8d041c293/US-en-20161212-pophoursaltreverse-perspective_alpha_website_small.jpg");
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+}
+/*for home page*/
+.hero .tint{
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -10;
+  top: 0px;
+  left: 0px;
 }
 
-#branding{
-  padding:100px 60px;
+#branding, #signin-wrapper, #signup-wrapper{
+  padding:50px 60px;
+  min-height: 100vh;
+}
+
+#movies-page{
+  min-height: 100vh;
+  padding:10px 30px;
+}
+
+#recommended-movies-header-wrapper{
+  padding: 10px;
+}
+
+#recommended-movies-header-wrapper h1{
+    color: #00C853;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+    background-color: #000000;
+    font-size: 26px;
+    font-weight: 400;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #03A9F4;
+    font-style: italic;
+}
+
+#branding-support a{
+  color: #337ab7;
+  font-style: italic;
 }
 
 #branding-title{
   color: #03A9F4;
   font-size: 100px;
-  margin: 100px 0px; 
+  margin: 150px 0px; 
+  text-shadow: 6px 6px #000000;
 }
 
 #branding-support{
   text-transform: uppercase;
   font-size: 50px;
+  text-shadow: 4px 4px #000000;
+
 }
 
-
 #branding .btn{
-    color: #fff;
-    background-color: #286090;
-    border-color: #204d74;
-    font-size: 30px;
-    text-transform: uppercase;
-    margin-top: 60px;
+  color: #fff;
+  background-color: #00C853;
+  border-color: #00C853;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-top: 100px;
+  padding: 35px 30px;
+}
+
+#signin-wrapper{
+  background-image: url("https://images.unsplash.com/uploads/1412282232015a06e258a/4bdd2a58?dpr=1&auto=format&fit=crop&w=767&h=511&q=80&cs=tinysrgb&crop=");
+  background-image: url("https://images.unsplash.com/photo-1461511669078-d46bf351cd6e?dpr=1&auto=format&fit=crop&w=767&h=511&q=80&cs=tinysrgb&crop=");
+  background-size: cover;
+}
+
+#signup-wrapper{
+  background-image: url("https://images.unsplash.com/photo-1480430158524-ae7ea5944e3f?dpr=1&auto=format&fit=crop&w=767&h=512&q=80&cs=tinysrgb&crop=");
+  background-size: cover;
 }
 
 .movie{
 	display: inline-block;
-	padding: 10px;
+  border: 1px solid #B9F6CA;
+  padding: 2px;
+  margin-left: 10px;
+  margin-right: 10px; 
 }
+
+.carousel.slide{
+  margin-top: 40px;
+}
+
 
 .carousel-inner {
     height: 50vh;
@@ -65,8 +140,8 @@ h1,h2,h3,h4,h5,h6,p,span,a, a:focus, a:hover {
 
 .current-movie .video__el{
 	height: 70vh;
-    margin: 0 auto;
-    display: block;
+  margin: 0 auto;
+  display: block;
 }
 
 .user-profile .avatar{
@@ -77,54 +152,98 @@ nav a, nav span{
   font-size: 24px;
   font-weight: 400;
 }
+
+.modal-dialog {
+  width: 80vw;
+  margin: 15vh auto;
+}
+
+.modal-content{
+  background-color: #000000;
+  height: 70vh;
+}
+
+
+/* iPad in portrait
+ STYLES GO HERE */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) { 
+  #branding{
+    padding:120px 60px;
+  }
+  #branding-title{
+    margin: 100px 0px; 
+  }
+}
+
+
+
+/* iPad in landscape
+ STYLES GO HERE */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1366px) 
+and (orientation : landscape) { 
+
+  #branding{
+    padding:50px 60px;
+  }
+
+  #branding-title{
+    margin: 90px 0px;
+    font-size: 80px; 
+  }
+  #branding-support{
+    font-size: 30px;
+  }
+
+  #branding .btn{
+      margin-top: 80px;
+  }
+}
+
+
+
+
 /*https://codepen.io/ace-subido/pen/Cuiep
 */
 
 
-.wrapper {  
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
-
-.form-signin {
-  max-width: 380px;
+.form-signin, .form-signup {
+  max-width: 600px;
   padding: 15px 35px 45px;
   margin: 0 auto;
-  background-color: #fff;
-  border: 1px solid rgba(0,0,0,0.1);  
+}
 
-  .form-signin-heading,
-    .checkbox {
-      margin-bottom: 30px;
-    }
 
-    .checkbox {
-      font-weight: normal;
-    }
+.form-signin .form-signin-heading,
+.form-signin .checkbox,
+.form-signup .form-signup-heading,
+.form-signup .checkbox{
+  margin-bottom: 30px;
+}
 
-    .form-control {
-      position: relative;
-      font-size: 16px;
-      height: auto;
-      padding: 10px;
-        @include box-sizing(border-box);
+.form-signin .checkbox, .form-signup .checkbox {
+  font-weight: normal;
+  color: #fff;
+}
 
-        &:focus {
-          z-index: 2;
-        }
-    }
 
-    input[type="text"] {
-      margin-bottom: -1px;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
 
-    input[type="password"] {
-      margin-bottom: 20px;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-    }
+.form-signin  input[type="text"], .form-signup input[type="text"] {
+  margin-bottom: 20px;
+  border-radius: 0;
+}
+
+.form-signin input[type="password"], .form-signup input[type="password"] {
+  margin-bottom: 20px;
+  border-radius: 0;
+}
+
+.btn-group-lg>.btn, .btn-lg{
+    border-radius: 0;
 }
 
 

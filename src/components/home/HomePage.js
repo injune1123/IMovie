@@ -6,9 +6,9 @@ class HomePage extends React.Component {
 		return (
 			<div className="home">
 				<div className="hero" id="branding">
+					<div className="tint"></div>
 					<h1 id="branding-title">See What You Love</h1>
-					<span id="branding-support" >Your Personalized Movie Land.<Link to="about">Learn more</Link></span>
-		
+					<span id="branding-support" >Your Personalized Movie Land.&nbsp;<Link to="about">Learn more</Link></span>
 					<div>
 					<Link to="signin" className="btn btn-primary btn-lg">Sign In to Watch</Link>
 					</div>

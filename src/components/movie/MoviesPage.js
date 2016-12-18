@@ -24,7 +24,7 @@ class moviesPage extends React.Component{
 		const {movies} = this.props;
 
 		return(
-		<div>
+		<div id="movies-page">
 			{/* <h1>Movies</h1>
 			<input type="submit"
 				value="Add Movie"
@@ -33,9 +33,11 @@ class moviesPage extends React.Component{
 			/>
 			<MovieList movies={movies}/>
 			*/}
-			<MovieCarousel/>
-			<div>	
-				<h1>Movies recommended for you</h1>
+			<MovieCarousel movies={movies}/>
+			<div>
+				<div id="recommended-movies-header-wrapper">	
+					<h1>Recommended Movies</h1>
+				</div>
 				{this.props.movies.map(this.movieRow)}
 			</div>
 			

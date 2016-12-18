@@ -29,15 +29,18 @@ class WatchMoviePage extends React.Component{
 
 		playButton.addEventListener("click", function() {
 		  if (currentVideo2.paused == true) {
-		  	that.play()
+		  	that.play();
 		    // Play the video
 		    currentVideo2.play();
+		   	socket.emit('click_video', {"uid": "yiyi", "epoch": new Date().getTime()});
+
 		    // Update the button text to 'Pause'
 		    playButton.innerHTML = "Pause";
 		  } else {
 		    // Pause the video
 		    currentVideo2.pause();
-		  	that.play()
+		  	that.play();
+		   	socket.emit('click_video', {"uid": "yiyi", "epoch": new Date().getTime()});
 
 		    // Update the button text to 'Play'
 		    playButton.innerHTML = "Play";
@@ -47,7 +50,6 @@ class WatchMoviePage extends React.Component{
 
 		currentVideo1.onplay = this.play;
 	}
-
 
 	render() {
 		return (

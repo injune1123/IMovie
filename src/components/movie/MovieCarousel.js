@@ -12,7 +12,9 @@ class MovieCarousel extends React.Component{
 	}
 	render(){
 		return (  <Carousel>
+
     <Carousel.Item>
+      <div className="tint"></div>
       <img width={900} height={500} alt="900x500" src="http://cdn.history.com/sites/2/2015/05/hith-titanic-tombstone-E.jpeg"/>
       <Carousel.Caption>
         <Link to="movie">
@@ -22,7 +24,11 @@ class MovieCarousel extends React.Component{
         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
       </Carousel.Caption>
     </Carousel.Item>
+
+
     <Carousel.Item>
+          <div className="tint"></div>
+
       <img width={900} height={500} alt="900x500" src="http://cdn.history.com/sites/2/2015/05/hith-titanic-tombstone-E.jpeg"/>
       <Carousel.Caption>
         <Link to="movie">
@@ -32,7 +38,10 @@ class MovieCarousel extends React.Component{
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </Carousel.Caption>
     </Carousel.Item>
+
     <Carousel.Item>
+          <div className="tint"></div>
+
       <img width={900} height={500} alt="900x500" src="http://cdn.history.com/sites/2/2015/05/hith-titanic-tombstone-E.jpeg"/>
       <Carousel.Caption>
         <Link to="movie">        

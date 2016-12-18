@@ -17,13 +17,11 @@ class RecommendedMovie extends React.Component{
 	}
 	render() {
 		return (
-		<div className="movie">	
+		<div className="movie" >	
 			<div  onClick={this.open}>
-				<p>{this.props.movie.name}</p>
-				<img src={this.props.movie.mimg} alt="" height="100" width="200"/>
+				<img src={this.props.movie.mimg} alt="" width="80px" height="120px"/>
 			</div>
-
-			<Modal show={this.state.showModal} onHide={this.close}>
+			<Modal show={this.state.showModal} onHide={this.close} className="browse-movie-modal">
 			  <Modal.Header closeButton>
 				<Modal.Title>Modal heading</Modal.Title>
 			  </Modal.Header>
