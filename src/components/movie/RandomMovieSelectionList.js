@@ -13,7 +13,6 @@ class RandomMovieSelectionList extends React.Component{
 		video.src= this.props.movie.mlink;
 	  	video.load();
 	  	video.play();
-
 	}
 	render() {
 		return (
