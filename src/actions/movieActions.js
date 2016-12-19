@@ -16,11 +16,14 @@ export function updateMovieSuccess(movie){
 }
 
 export function loadMovies(){
+
+	console.log("load movies")
 	return function(dispatch){
 		dispatch(beginAjaxCall());
 		return axios.get('http://54.221.40.5:8111/getmid?mid=1')
 		.then(movies => {
 			var recMovieList = movies.data.data.rec_list;
+			console.log("in the action part", recMovieList);
 			dispatch(loadMoviesSuccess(recMovieList));
 		}).catch(error => {
 			throw(error);
