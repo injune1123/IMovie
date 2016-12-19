@@ -6,7 +6,6 @@ import MovieList from './MovieList';
 import MovieCarousel from './MovieCarousel';
 import {browserHistory} from 'react-router';
 import RecommendedMovie from './RecommendedMovie';
-import StringRecommendation from './StringRecommendation';
 
 class moviesPage extends React.Component{
 	constructor(props, context){
@@ -40,7 +39,6 @@ class moviesPage extends React.Component{
 					<h1>Recommended Movies</h1>
 				</div>
 				{this.props.movies.map(this.movieRow)}
-				<StringRecommendation/>
 
 			</div>
 			

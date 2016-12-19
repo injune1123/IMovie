@@ -9,8 +9,11 @@ class StringRecommendation extends React.Component{
 		}
 	}
 	componentDidMount(){
-		// coonect so
-
+		socket.on('message', function(data){
+			console.log("get data in string list")
+            res=JSON.parse(data);
+            console.log(data);
+      });
 	}
 
 	render(){

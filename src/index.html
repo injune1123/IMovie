@@ -16,11 +16,11 @@
       data['mid'] = 6565733;
       data['epoch'] = new Date().getTime();
       console.log(data);
-      //socket.emit('click_video', data);
+      socket.emit('click_video', data);
 
       socket.on('message', function(data){
             res=JSON.parse(data);
-            console.log(data);
+            console.log("get data in index", data);
       });
     </script>
 </body>	
