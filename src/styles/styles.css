@@ -23,13 +23,16 @@ h1,h2,h3,h4,h5,h6,p,span,a, a:focus, a:hover {
 }
 .hero{
   background-image: url("https://assets.nflxext.com/ffe/siteui/vlv2/d1c33117-9d59-4974-a239-46e012b87e19/8c82aa63-eb6f-4569-a6b7-1ba8d041c293/US-en-20161212-pophoursaltreverse-perspective_alpha_website_small.jpg");
+  background-image:url("https://images.unsplash.com/photo-1479660095429-2cf4e1360472?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=");
   background-size: cover;
   position: relative;
   z-index: 0;
 }
+
+
 /*for home page*/
 .hero .tint{
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   height: 100%;
   width: 100%;
@@ -160,9 +163,20 @@ nav a, nav span{
 .modal-content{
   background-color: #000000;
   height: 60vh;
+  border: 1px solid #B9F6CA;
+  border-radius: 0px;
 }
-
-
+.modal-header .close{
+  opacity: 1;
+  font-size: 30px;
+  text-shadow: none;
+}
+.modal-header span{
+  color: #00C853;
+}
+.modal-body{
+  padding: 60px;
+}
 #cur-video{
   width: 97vw;
 }
@@ -258,7 +272,16 @@ and (orientation : landscape) {
     border-radius: 0;
 }
 
+nav a, nav span {
+    font-size: 18px;
+    font-weight: 400;
+    color: #00C853;
+    text-transform: uppercase;
+}
 
+nav{
+  margin-top: 10px;
+}
 /*
 https://github.com/mderrick/react-html5video/blob/master/dist/ReactHtml5Video.css
 */

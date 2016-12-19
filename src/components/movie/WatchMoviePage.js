@@ -24,12 +24,6 @@ class WatchMoviePage extends React.Component{
 	updateCurrentMovie (){
 		this.setState({currentMovieLink: sessionStorage.currentMovieLink});
 	}
-
-	RandomMovieSelectionListGenerator(movie, index){
-		return (
-		<RandomMovieSelectionList movie={movie}/>
-		)
-	}
 	componentDidMount(){
 
 		socket.on('message', function(data){
@@ -39,8 +33,8 @@ class WatchMoviePage extends React.Component{
 
 		var currentVideo = document.getElementById("cur-video");
 		function seeked(){
-		        start = currentVideo.currentTime;
-		        currentVideo.play();
+		    start = currentVideo.currentTime;
+		    currentVideo.play();
 		}
 		var that = this;
 
@@ -101,11 +95,11 @@ class WatchMoviePage extends React.Component{
 
 		return (
 			<div id="watch-video-page">
-				<video id="cur-video" controls="true">
+				<video id="cur-video" controls="true" autoPlay>
 				  <source src={this.state.currentMovieLink} type="video/mp4"/>
 				  Your browser does not support HTML5 video.
 				</video>
-				{this.state.movies.map(this.RandomMovieSelectionListGenerator)}
+				<RandomMovieSelectionList/>
 				<StringRecommendation/>
 			</div>
 		);

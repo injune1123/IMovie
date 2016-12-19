@@ -53,19 +53,6 @@ class MovieCarousel extends React.Component{
 		return (  <Carousel>
 
     <Carousel.Item>
-      <div className="tint"></div>
-      <img width={900} height={500} alt="900x500" src="http://cdn.history.com/sites/2/2015/05/hith-titanic-tombstone-E.jpeg"/>
-      <Carousel.Caption>
-        <Link to="movie">
-          <Button bsStyle="info"onClick={this.saveCurMovieInfo1}>Watch Now</Button>
-        </Link>
-        <h3>Titanic (1997)</h3>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </Carousel.Caption>
-    </Carousel.Item>
-
-
-    <Carousel.Item>
           <div className="tint"></div>
 
       <img width={900} height={500} alt="900x500" src="https://s3.amazonaws.com/actionmovie/a4.jpg"/>
@@ -90,6 +77,19 @@ class MovieCarousel extends React.Component{
         <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
       </Carousel.Caption>
     </Carousel.Item>
+
+        <Carousel.Item>
+      <div className="tint"></div>
+      <img width={900} height={500} alt="900x500" src="http://cdn.history.com/sites/2/2015/05/hith-titanic-tombstone-E.jpeg"/>
+      <Carousel.Caption>
+        <Link to="movie">
+          <Button bsStyle="info"onClick={this.saveCurMovieInfo1}>Watch Now</Button>
+        </Link>
+        <h3>Titanic (1997)</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </Carousel.Caption>
+    </Carousel.Item>
+
   </Carousel>);
 	}
 }
