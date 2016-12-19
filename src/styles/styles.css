@@ -33,7 +33,9 @@ h1,h2,h3,h4,h5,h6,p,span,a, a:focus, a:hover {
   margin-top: 60px;
   margin-bottom: 40px; 
 }
-
+#watch-video-page{
+  margin-bottom: 100px;
+}
 
 /*for home page*/
 .hero .tint{
@@ -406,6 +408,18 @@ https://github.com/mderrick/react-html5video/blob/master/dist/ReactHtml5Video.cs
       font-size: 60px;
 }
 
+.recommended-string{
+  display: inline-block;
+  border: 1px solid white;
+  margin: 10px;
+  text-align: center;
+}
+
+.recommended-string h3{
+  color: #00C853;
+  font-weight: 200;
+  padding: 0px 0px 20px 0px;
+}
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
 /*

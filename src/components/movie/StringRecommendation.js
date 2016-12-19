@@ -21,17 +21,22 @@ class StringRecommendation extends React.Component{
 	}
 
 	render(){
-
+		console.log("see it here!", this.state.recommendationList);
 		return(
-		<div id="recommended-string-div">
+			<div id="recommended-string-div">
 			<h1>Recommended for you</h1>
 			{this.state.recommendationList.map(
 				function(item){
-				return (<span>{item}</span>);
-				}
-			)}
-		</div>
-		);
+					return (
+						<span className="recommended-string col col-sm-2">
+						<h3 className="row">
+							{item[0]}
+						</h3>
+						<h5 className="row">
+							{item[1]}
+						</h5></span>)})}
+			</div>
+		)
 	}
 }
 
