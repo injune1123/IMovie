@@ -20,7 +20,7 @@ class RecommendedMovie extends React.Component{
 	saveCurMovieInfo(){
 		sessionStorage.currentMovieId=this.props.movie.mid;
 		sessionStorage.currentMovieLink=this.props.movie.mlink;
-
+		sessionStorage.currentMovieName=this.props.movie.name;
 	      var data = {};
 	      data['uid'] = sessionStorage.currentUserId;
 	      data['mid'] = sessionStorage.currentMovieId;

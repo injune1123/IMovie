@@ -38,13 +38,18 @@ class RandomMovieSelectionList extends React.Component{
 	}
 	render() {
 		return( 
-		<div>
+		<div id="random-video-page">
+		<h2>{sessionStorage.currentMovieName}</h2>
+		<h1>Choose what you like</h1>
 		{this.state.movies.map(function(m){
 			return <img src={m.mimg} onClick={function(){
 				var video = document.getElementById('cur-video');
 				video.src= m.mlink;
 	  			video.load();
 	  			video.play();
+	  			sessionStorage.currentMovieName=m.name;
+	  			sessionStorage.currentMovieId=m.mid;
+				sessionStorage.currentMovieLink=m.mlink;
 	  			this.updateList();
 	  		}.bind(this)
 	  		}/>

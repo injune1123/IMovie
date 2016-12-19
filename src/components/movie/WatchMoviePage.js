@@ -26,11 +26,6 @@ class WatchMoviePage extends React.Component{
 	}
 	componentDidMount(){
 
-		socket.on('message', function(data){
-	        res=JSON.parse(data);
-	        console.log(data);
-        });
-
 		var currentVideo = document.getElementById("cur-video");
 		function seeked(){
 		    start = currentVideo.currentTime;
@@ -42,7 +37,6 @@ class WatchMoviePage extends React.Component{
 
 		function show(){
 		        that.state.last_m.push(currentVideo.currentTime);	
-		        console.log("show");
 		}
 		function play() {
 		        that.state.start = currentVideo.currentTime;
@@ -66,7 +60,6 @@ class WatchMoviePage extends React.Component{
     	data["epoch"]=new Date().getTime();
     	data["uid"]=sessionStorage.currentUserId
 	    console.log("send_interval", data);
-
     	socket.emit('watch_interval', data);
 
         that.setState({"last_m":[]});
@@ -96,7 +89,6 @@ class WatchMoviePage extends React.Component{
 				  <source src={this.state.currentMovieLink} type="video/mp4"/>
 				  Your browser does not support HTML5 video.
 				</video>
-				<hr/>
 				<RandomMovieSelectionList/>
 				<StringRecommendation/>
 			</div>

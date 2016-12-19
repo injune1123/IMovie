@@ -16,7 +16,7 @@ class MovieCarousel extends React.Component{
   saveCurMovieInfo1(){
     sessionStorage.currentMovieId=1721;
     sessionStorage.currentMovieLink='https://s3-us-west-1.amazonaws.com/movie-project/Titanic+Trailer+(as+a+Romantic+Comedy+movie)-aXgkYZLW25c.mp4';
-
+    sessionStorage.currentMovieName='Titanic (1997)'
         var data = {};
         data['uid'] = sessionStorage.currentUserId;
         data['mid'] = sessionStorage.currentMovieId;
@@ -28,7 +28,7 @@ class MovieCarousel extends React.Component{
     saveCurMovieInfo2(){
     sessionStorage.currentMovieId=101362;
     sessionStorage.currentMovieLink='https://s3.amazonaws.com/actionmovie/Olympus+Has+Fallen+-+Official+Trailer+(HD)-vwx1f0kyNwI.mp4';
-
+    sessionStorage.currentMovieName='Olympus Has Fallen (2013)'
         var data = {};
         data['uid'] = sessionStorage.currentUserId;
         data['mid'] = sessionStorage.currentMovieId;
@@ -40,7 +40,7 @@ class MovieCarousel extends React.Component{
     saveCurMovieInfo3(){
     sessionStorage.currentMovieId=4223;
     sessionStorage.currentMovieLink='https://s3.amazonaws.com/warmovie/Enemy+at+the+Gates+(2001)+Official+Trailer+%231+-+Jude+Law+Movie+HD-4O-sMh_DO6I.mp4';
-
+    sessionStorage.currentMovieName='Enemy at the Gates (2001)'
         var data = {};
         data['uid'] = sessionStorage.currentUserId;
         data['mid'] = sessionStorage.currentMovieId;
