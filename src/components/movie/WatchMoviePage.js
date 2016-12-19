@@ -2,7 +2,9 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import { default as Video, Controls, Play, Mute, Seek, Fullscreen, Time, Overlay } from 'react-html5video';
-
+import * as movieActions from '../../actions/movieActions';
+import axios from 'axios';
+import RandomMovieSelectionList from './RandomMovieSelectionList';
 
 class WatchMoviePage extends React.Component{
 	constructor(props, context){
@@ -13,12 +15,22 @@ class WatchMoviePage extends React.Component{
 			saving: false,
 			last_m: [],
 			start: 0,
-			uid:"amazing"
+			uid:"amazing",
+			movies:props.movies,
+			currentMovieLink: sessionStorage.currentMovieLink
 		};
+	}
+	updateCurrentMovie (){
+		this.setState({currentMovieLink: sessionStorage.currentMovieLink});
+	}
+
+	RandomMovieSelectionListGenerator(movie, index){
+		return (
+		<RandomMovieSelectionList movie={movie}/>
+		)
 	}
 	componentDidMount(){
 
-		alert(this.props.movieId);
 		socket.on('message', function(data){
 	        res=JSON.parse(data);
 	        console.log(data);
@@ -36,7 +48,6 @@ class WatchMoviePage extends React.Component{
 		function show(){
 		        that.state.last_m.push(currentVideo.currentTime);	
 		        console.log("show");
-	        
 		}
 		function play() {
 
@@ -45,20 +56,29 @@ class WatchMoviePage extends React.Component{
 		function pause() {
 			console.log("in pause");
 
-	    	if(that.state.last_m[that.state.last_m.length-3] === undefined || that.state.start > that.state.last_m[that.state.last_m.length-3] ) return;
-	   		console.log("this.state", that.state.last_m);
-	    	var data ={};
-	    	var uid = that.state.uid;
+		axios.get('http://54.221.40.5:8111/getmid?mid=1')
+		.then(movies => {
+			var recMovieList = movies.data.data.rec_list;
+			that.setState({movies: recMovieList});
 
-	 	   	data["watch_interval"]=that.state.start+":"+that.state.last_m[that.state.last_m.length-3];
-	       	data["mid"]="mid"; 
-	    	data["epoch"]=new Date().getTime();
-	    	data["uid"]='test'
-		    console.log("data", data);
+		}).catch(error => {
+			throw(error);
+		});
 
-	    	socket.emit('watch_interval', data);
+    	if(that.state.last_m[that.state.last_m.length-3] === undefined || that.state.start > that.state.last_m[that.state.last_m.length-3] ) return;
+   		console.log("this.state", that.state.last_m);
+    	var data ={};
+    	var uid = that.state.uid;
 
-	        that.setState({"last_m":[]});
+ 	   	data["watch_interval"]=that.state.start+":"+that.state.last_m[that.state.last_m.length-3];
+       	data["mid"]="mid"; 
+    	data["epoch"]=new Date().getTime();
+    	data["uid"]='test'
+	    console.log("data", data);
+
+    	socket.emit('watch_interval', data);
+
+        that.setState({"last_m":[]});
 		}
 		function makeBig() {
     		currentVideo.width = 560;
@@ -78,12 +98,14 @@ class WatchMoviePage extends React.Component{
 	}
 
 	render() {
+
 		return (
 			<div id="watch-video-page">
 				<video id="cur-video" controls="true">
-				  <source src={sessionStorage.currentMovieLink} type="video/mp4"/>
+				  <source src={this.state.currentMovieLink} type="video/mp4"/>
 				  Your browser does not support HTML5 video.
 				</video>
+				{this.state.movies.map(this.RandomMovieSelectionListGenerator)}
 			</div>
 		);
 	}	
@@ -94,7 +116,15 @@ function mapStateToProps(state, ownProps) {
 
   return {
     movieId: movieId,
+    movies: state.movies
+
   };
 }
 
-export default connect(mapStateToProps)(WatchMoviePage);
+function mapDispatchToProps(dispatch){
+	return {
+		actions: bindActionCreators(movieActions,dispatch)
+	};
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(WatchMoviePage);
