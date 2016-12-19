@@ -12,7 +12,6 @@ html {
     font-size: 112.5% /* This means 16px */
 }
 
-
 h1,h2,h3,h4,h5,h6,p,span,a, a:focus, a:hover {
   color: #fff;
 }{
@@ -39,7 +38,7 @@ h1,h2,h3,h4,h5,h6,p,span,a, a:focus, a:hover {
   left: 0px;
 }
 
-#branding, #signin-wrapper, #signup-wrapper, .user-profile{
+#branding, #signin-wrapper, #signup-wrapper, .user-profile, #watch-video-page{
   padding:50px 60px;
   min-height: 100vh;
 }
@@ -212,8 +211,13 @@ and (orientation : landscape) {
   }
 }
 
-
-
+#watch-video-page img{
+  vertical-align: middle;
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #B9F6CA;
+  margin: 10px;
+}
 
 /*https://codepen.io/ace-subido/pen/Cuiep
 */

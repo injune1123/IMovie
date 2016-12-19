@@ -5,15 +5,18 @@ class StringRecommendation extends React.Component{
 	constructor(props, context){
 		super(props, context);
 		this.state = {
-			recommendationList : [1]
+			recommendationList : []
+
 		}
 	}
 	componentDidMount(){
+		var that = this;
 		socket.on('message', function(data){
 		console.log("get data in string list")
         var res=JSON.parse(data);
-        console.log(data);
-
+        console.log(res);
+        var recList = res.rec_list;
+        that.setState({recommendationList : recList});
       });
 	}
 
@@ -23,7 +26,7 @@ class StringRecommendation extends React.Component{
 		<div id="recommended-string-div">
 			{this.state.recommendationList.map(
 				function(item){
-				return (<span>hi</span>);
+				return (<span>{item}</span>);
 				}
 			)}
 		</div>

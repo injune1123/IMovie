@@ -71,7 +71,7 @@ class WatchMoviePage extends React.Component{
     	var data ={};
 
  	   	data["watch_interval"]=that.state.start+":"+that.state.last_m[that.state.last_m.length-3];
-       	data["mid"]=that.state.mid; 
+       	data["mid"]=sessionStorage.currentMovieId; 
     	data["epoch"]=new Date().getTime();
     	data["uid"]=sessionStorage.currentUserId
 	    console.log("data", data);
@@ -118,7 +118,6 @@ function mapStateToProps(state, ownProps) {
   return {
     movieId: movieId,
     movies: state.movies
-
   };
 }
 
