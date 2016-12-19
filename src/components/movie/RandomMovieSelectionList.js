@@ -22,7 +22,7 @@ class RandomMovieSelectionList extends React.Component{
 	}
 	updateList(){
 		var that = this;
-				axios.get('http://54.221.40.5:8111/getmid?mid=1')
+		axios.get('http://54.221.40.5:8111/getmid?mid=1')
 		.then(movies => {
 			var recMovieList = movies.data.data.rec_list;
 			that.setState({movies: recMovieList});

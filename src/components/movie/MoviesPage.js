@@ -2,7 +2,6 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as movieActions from '../../actions/movieActions';
-import MovieList from './MovieList';
 import MovieCarousel from './MovieCarousel';
 import {browserHistory} from 'react-router';
 import RecommendedMovie from './RecommendedMovie';
@@ -25,15 +24,6 @@ class moviesPage extends React.Component{
 
 		return(
 		<div id="movies-page">
-			{/* <h1>Movies</h1>
-			<input type="submit"
-				value="Add Movie"
-				className="btn btn-primary"
-				onClick={this.redirectToAddMoviePage}
-			/>
-			<MovieList movies={movies}/>
-			*/}
-			
 			<MovieCarousel movies={movies}/>
 			<div>
 				<div id="recommended-movies-header-wrapper">	
