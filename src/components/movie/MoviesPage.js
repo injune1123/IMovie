@@ -33,6 +33,7 @@ class moviesPage extends React.Component{
 			/>
 			<MovieList movies={movies}/>
 			*/}
+			
 			<MovieCarousel movies={movies}/>
 			<div>
 				<div id="recommended-movies-header-wrapper">	
