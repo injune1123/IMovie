@@ -261,7 +261,7 @@ and (orientation : landscape) {
   height: 120px;
   padding: 0px 10px;
   border: 1px solid #B9F6CA;
-  margin: 10px;
+  margin: 10px 10px 10px 0px;
 }
 
 /*https://codepen.io/ace-subido/pen/Cuiep
@@ -436,7 +436,7 @@ https://github.com/mderrick/react-html5video/blob/master/dist/ReactHtml5Video.cs
 
 .recommended-string h3{
   color: #00C853;
-  font-weight: 200;
+  font-weight: 400;
   padding: 0px 0px 20px 0px;
 }
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
