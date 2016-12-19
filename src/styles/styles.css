@@ -257,9 +257,9 @@ and (orientation : landscape) {
 
 #watch-video-page img{
   vertical-align: middle;
-  width: 200px;
+  width: 190px;
   height: 120px;
-  padding: 0px 5px;
+  padding: 0px 10px;
   border: 1px solid #B9F6CA;
   margin: 10px 10px 10px 0px;
 }
