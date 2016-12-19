@@ -35,6 +35,7 @@ class RecommendedMovie extends React.Component{
 			<div  onClick={this.open}>
 				<img src={this.props.movie.mimg} alt="" width="150px" height="200px"/>
 			</div>
+			<p>{this.props.movie.name} </p>
 			<Modal show={this.state.showModal} onHide={this.close} className="browse-movie-modal">
 			  <Modal.Header closeButton>
 				<Modal.Title>{this.props.movie.name}</Modal.Title>
