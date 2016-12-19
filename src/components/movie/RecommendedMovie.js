@@ -33,7 +33,7 @@ class RecommendedMovie extends React.Component{
 		return (
 		<div className="movie" >	
 			<div  onClick={this.open}>
-				<img src={this.props.movie.mimg} alt="" width="150px" height="200px"/>
+				<img src={this.props.movie.mimg} title={this.props.movie.name} alt="" width="150px" height="200px"/>
 			</div>
 			<p>{this.props.movie.name} </p>
 			<Modal show={this.state.showModal} onHide={this.close} className="browse-movie-modal">
@@ -41,10 +41,10 @@ class RecommendedMovie extends React.Component{
 				<Modal.Title>{this.props.movie.name}</Modal.Title>
 			  </Modal.Header>
 			  <Modal.Body>
-			  <div className="col col-md-6">
-				  	<img src={this.props.movie.mimg} alt="" width="200px" height="220px"/>
+			  <div className="col col-md-6 img-container">
+				  	<img src={this.props.movie.mimg}/>
 			 </div>
-				  <div className="col col-md-6">
+				  <div className="col col-md-6 modal-text-introduction">
 				  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto neque harum laboriosam repellat distinctio incidunt ad explicabo dignissimos atque. Esse molestias hic magni nobis distinctio sequi, mollitia animi pariatur?</p>
 				  	<Link to={'/movie/' + this.props.movie.mid}>        
 	        		<Button bsStyle="info" onClick={this.saveCurMovieInfo} >Watch Now</Button>
