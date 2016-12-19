@@ -22,11 +22,11 @@ class RecommendedMovie extends React.Component{
 		sessionStorage.currentMovieLink=this.props.movie.mlink;
 		var socket = io('http://54.221.40.5:6888');
 		  console.log('save');
-	      data = {};
+	      var data = {};
 	      data['uid'] = sessionStorage.currentUserId;
-	      data['mid'] = this.props.movie.mid;
+	      data['mid'] = sessionStorage.currentMovieId;
 	      data['epoch'] = new Date().getTime();
-	      console.log(data);
+	      console.log('save',data);
 	      socket.emit('click_video', data);
 	}
 
