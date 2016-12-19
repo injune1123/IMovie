@@ -219,6 +219,7 @@ and (orientation : portrait) {
 
 div.img-container{
   overflow: hidden;
+  padding-bottom: 60px;
 }
 
 .modal-body img{
@@ -818,6 +819,6 @@ word-wrap: break-word;
 word-break: normal; 
 }
 
-.modal-text-introduction{
+.modal-text-introduction, .modal-img-introduction{
   padding-bottom: 60px;
 }

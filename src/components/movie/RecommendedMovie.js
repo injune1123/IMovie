@@ -41,7 +41,7 @@ class RecommendedMovie extends React.Component{
 				<Modal.Title>{this.props.movie.name}</Modal.Title>
 			  </Modal.Header>
 			  <Modal.Body>
-			  <div className="col col-md-6 img-container">
+			  <div className="col col-md-6 img-container modal-image-introduction">
 				  	<img src={this.props.movie.mimg}/>
 			 </div>
 				  <div className="col col-md-6 modal-text-introduction">
