@@ -51,20 +51,6 @@ class MovieCarousel extends React.Component{
 
 	render(){
 		return (  <Carousel>
-
-    <Carousel.Item>
-          <div className="tint"></div>
-
-      <img width={900} height={500} alt="900x500" src="https://s3.amazonaws.com/actionmovie/a4.jpg"/>
-      <Carousel.Caption>
-        <Link to="movie">
-          <Button bsStyle="info" onClick={this.saveCurMovieInfo2}>Watch Now</Button>
-        </Link>
-        <h3>Olympus Has Fallen (2013)</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </Carousel.Caption>
-    </Carousel.Item>
-
     <Carousel.Item>
           <div className="tint"></div>
 
@@ -78,7 +64,7 @@ class MovieCarousel extends React.Component{
       </Carousel.Caption>
     </Carousel.Item>
 
-        <Carousel.Item>
+    <Carousel.Item>
       <div className="tint"></div>
       <img width={900} height={500} alt="900x500" src="http://cdn.history.com/sites/2/2015/05/hith-titanic-tombstone-E.jpeg"/>
       <Carousel.Caption>
@@ -87,6 +73,19 @@ class MovieCarousel extends React.Component{
         </Link>
         <h3>Titanic (1997)</h3>
         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </Carousel.Caption>
+    </Carousel.Item>
+
+    <Carousel.Item>
+          <div className="tint"></div>
+
+      <img width={900} height={500} alt="900x500" src="https://s3.amazonaws.com/actionmovie/a4.jpg"/>
+      <Carousel.Caption>
+        <Link to="movie">
+          <Button bsStyle="info" onClick={this.saveCurMovieInfo2}>Watch Now</Button>
+        </Link>
+        <h3>Olympus Has Fallen (2013)</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </Carousel.Caption>
     </Carousel.Item>
 
