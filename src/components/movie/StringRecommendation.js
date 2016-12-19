@@ -10,9 +10,10 @@ class StringRecommendation extends React.Component{
 	}
 	componentDidMount(){
 		socket.on('message', function(data){
-			console.log("get data in string list")
-            res=JSON.parse(data);
-            console.log(data);
+		console.log("get data in string list")
+        var res=JSON.parse(data);
+        console.log(data);
+
       });
 	}
 

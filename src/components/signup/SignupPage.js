@@ -17,6 +17,12 @@ class SignupPage extends React.Component{
 
 	saveCurUserInfo(){
 		sessionStorage.currentUserId=this.state.value;
+	    var data = {};
+        data['uid'] = sessionStorage.currentUserId;
+        data['mid'] = 99822;
+        data['epoch'] = new Date().getTime();
+        console.log('uid',data);
+        socket.emit('click_video', data);
 	}
 	handleChange(event) {
     	this.setState({value: event.target.value});
