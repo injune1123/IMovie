@@ -19,9 +19,8 @@
       socket.emit('click_video', data);
 
       socket.on('message', function(data){
-
-      res=JSON.parse(data);
-      console.log(data);
+            res=JSON.parse(data);
+            console.log(data);
       });
     </script>
 </body>	

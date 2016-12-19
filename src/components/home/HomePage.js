@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
+import {Button} from 'react-bootstrap';
 
 class HomePage extends React.Component {
 	render(){
@@ -10,7 +11,9 @@ class HomePage extends React.Component {
 					<h1 id="branding-title">See What You Love</h1>
 					<span id="branding-support" >Your Personalized Movie Land.&nbsp;<Link to="about">Learn more</Link></span>
 					<div>
-					<Link to="signin" className="btn btn-primary btn-lg">Sign In to Watch</Link>
+					<Link to="signin">        
+        				<Button bsStyle="info">Sign In to Watch</Button>
+        			</Link>
 					</div>
 				</div>
 			</div>

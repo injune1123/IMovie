@@ -21,12 +21,12 @@ class RecommendedMovie extends React.Component{
 		sessionStorage.currentMovieId=this.props.movie.mid;
 		sessionStorage.currentMovieLink=this.props.movie.mlink;
 	}
-	
+
 	render() {
 		return (
 		<div className="movie" >	
 			<div  onClick={this.open}>
-				<img src={this.props.movie.mimg} alt="" width="80px" height="120px"/>
+				<img src={this.props.movie.mimg} alt="" width="100px" height="200px"/>
 			</div>
 			<Modal show={this.state.showModal} onHide={this.close} className="browse-movie-modal">
 			  <Modal.Header closeButton>
@@ -34,13 +34,11 @@ class RecommendedMovie extends React.Component{
 			  </Modal.Header>
 			  <Modal.Body>
 			  	<img src={this.props.movie.mimg} alt="" width="200px" height="220px"/>
-			  </Modal.Body>
-			  <Modal.Footer>
-				<Button onClick={this.close}>Close</Button>
-				<Link to={'/movie/' + this.props.movie.mid}>        
+			  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto neque harum laboriosam repellat distinctio incidunt ad explicabo dignissimos atque. Esse molestias hic magni nobis distinctio sequi, mollitia animi pariatur?</p>
+			  	<Link to={'/movie/' + this.props.movie.mid}>        
         		<Button bsStyle="info" onClick={this.saveCurMovieInfo} >Watch Now</Button>
         		</Link>
-			  </Modal.Footer>
+			  </Modal.Body>
 			</Modal>
 		</div>
 		);
