@@ -15,7 +15,6 @@ class WatchMoviePage extends React.Component{
 			saving: false,
 			last_m: [],
 			start: 0,
-			uid:"amazing",
 			movies:props.movies,
 			currentMovieLink: sessionStorage.currentMovieLink
 		};
@@ -73,7 +72,7 @@ class WatchMoviePage extends React.Component{
  	   	data["watch_interval"]=that.state.start+":"+that.state.last_m[that.state.last_m.length-3];
        	data["mid"]="mid"; 
     	data["epoch"]=new Date().getTime();
-    	data["uid"]='test'
+    	data["uid"]=sessionStorage.currentUserId
 	    console.log("data", data);
 
     	socket.emit('watch_interval', data);
