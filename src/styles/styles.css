@@ -259,14 +259,13 @@ and (orientation : landscape) {
   vertical-align: middle;
   width: 200px;
   height: 120px;
-  padding: 0px 10px;
+  padding: 0px 5px;
   border: 1px solid #B9F6CA;
   margin: 10px 10px 10px 0px;
 }
 
 /*https://codepen.io/ace-subido/pen/Cuiep
 */
-
 
 .form-signin, .form-signup {
   max-width: 600px;
