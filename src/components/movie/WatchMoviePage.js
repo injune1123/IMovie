@@ -28,7 +28,7 @@ class WatchMoviePage extends React.Component{
 
 		var currentVideo = document.getElementById("cur-video");
 		function seeked(){
-		    start = currentVideo.currentTime;
+		    var start = currentVideo.currentTime;
 		    currentVideo.play();
 		}
 		var that = this;
