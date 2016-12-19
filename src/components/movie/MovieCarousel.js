@@ -9,7 +9,7 @@ import {Carousel, Button} from 'react-bootstrap';
 class MovieCarousel extends React.Component{
 	constructor(props, context){
 		super(props, context);
-    console.log(this.props)
+    console.log('Carousel',this.props.movies)
 	}
 	render(){
 		return (  <Carousel>

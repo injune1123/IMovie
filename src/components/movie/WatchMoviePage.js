@@ -5,6 +5,8 @@ import { default as Video, Controls, Play, Mute, Seek, Fullscreen, Time, Overlay
 import * as movieActions from '../../actions/movieActions';
 import axios from 'axios';
 import RandomMovieSelectionList from './RandomMovieSelectionList';
+import StringRecommendation from './StringRecommendation';
+
 
 class WatchMoviePage extends React.Component{
 	constructor(props, context){
@@ -106,6 +108,7 @@ class WatchMoviePage extends React.Component{
 				  Your browser does not support HTML5 video.
 				</video>
 				{this.state.movies.map(this.RandomMovieSelectionListGenerator)}
+				<StringRecommendation/>
 			</div>
 		);
 	}	
