@@ -21,6 +21,7 @@ class RecommendedMovie extends React.Component{
 		sessionStorage.currentMovieId=this.props.movie.mid;
 		sessionStorage.currentMovieLink=this.props.movie.mlink;
 	}
+	
 	render() {
 		return (
 		<div className="movie" >	

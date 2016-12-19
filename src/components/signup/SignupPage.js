@@ -19,7 +19,7 @@ class SignupPage extends React.Component{
 		sessionStorage.currentUserId=this.state.value;
 	}
 	handleChange(event) {
-    this.setState({value: event.target.value});
+    	this.setState({value: event.target.value});
     }
 	render () {
 		return (
