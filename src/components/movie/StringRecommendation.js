@@ -24,6 +24,7 @@ class StringRecommendation extends React.Component{
 
 		return(
 		<div id="recommended-string-div">
+			<h1>Recommended for you</h1>
 			{this.state.recommendationList.map(
 				function(item){
 				return (<span>{item}</span>);

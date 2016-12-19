@@ -60,7 +60,7 @@ class MovieCarousel extends React.Component{
         <Button bsStyle="info" onClick={this.saveCurMovieInfo3}>Watch Now</Button>
         </Link>
         <h3>Enemy at the Gates (2001)</h3>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        <p>R | 2h 11min | Drama, History, War | 21 July 2001</p>
       </Carousel.Caption>
     </Carousel.Item>
 
@@ -72,7 +72,7 @@ class MovieCarousel extends React.Component{
           <Button bsStyle="info"onClick={this.saveCurMovieInfo1}>Watch Now</Button>
         </Link>
         <h3>Titanic (1997)</h3>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <p>PG-13 | 3h 14min | Drama, Romance | 3 April 1998</p>
       </Carousel.Caption>
     </Carousel.Item>
 
@@ -85,7 +85,7 @@ class MovieCarousel extends React.Component{
           <Button bsStyle="info" onClick={this.saveCurMovieInfo2}>Watch Now</Button>
         </Link>
         <h3>Olympus Has Fallen (2013)</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>R | 1h 59min | Action, Thriller | 29 December 2013</p>
       </Carousel.Caption>
     </Carousel.Item>
 

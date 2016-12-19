@@ -18,16 +18,14 @@ class RecommendedMovie extends React.Component{
 		this.setState({ showModal: true });
 	}
 	saveCurMovieInfo(){
-		console.log("bugbugubug", this.props)
 		sessionStorage.currentMovieId=this.props.movie.mid;
 		sessionStorage.currentMovieLink=this.props.movie.mlink;
 
 	      var data = {};
-
 	      data['uid'] = sessionStorage.currentUserId;
 	      data['mid'] = sessionStorage.currentMovieId;
 	      data['epoch'] = new Date().getTime();
-	      console.log('save',data);
+	      console.log('click_send',data);
 	      socket.emit('click_video', data);
 	}
 

@@ -45,7 +45,6 @@ class WatchMoviePage extends React.Component{
 		        console.log("show");
 		}
 		function play() {
-
 		        that.state.start = currentVideo.currentTime;
 		}
 		function pause() {
@@ -61,14 +60,12 @@ class WatchMoviePage extends React.Component{
 		});
 
     	if(that.state.last_m[that.state.last_m.length-3] === undefined || that.state.start > that.state.last_m[that.state.last_m.length-3] ) return;
-   		console.log("this.state", that.state.last_m);
     	var data ={};
-
  	   	data["watch_interval"]=that.state.start+":"+that.state.last_m[that.state.last_m.length-3];
        	data["mid"]=sessionStorage.currentMovieId; 
     	data["epoch"]=new Date().getTime();
     	data["uid"]=sessionStorage.currentUserId
-	    console.log("data", data);
+	    console.log("send_interval", data);
 
     	socket.emit('watch_interval', data);
 

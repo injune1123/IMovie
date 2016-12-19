@@ -37,7 +37,7 @@ class moviesPage extends React.Component{
 			<MovieCarousel movies={movies}/>
 			<div>
 				<div id="recommended-movies-header-wrapper">	
-					<h1>Recommended Movies</h1>
+					<h1>Choose what you like</h1>
 				</div>
 				{this.props.movies.map(this.movieRow)}
 
