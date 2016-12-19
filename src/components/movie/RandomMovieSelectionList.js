@@ -2,6 +2,7 @@ import React, {PropTypes} from 'react';
 import {Carousel, Button, Modal} from 'react-bootstrap';
 import {browserHistory, Link} from 'react-router';
 import * as movieActions from '../../actions/movieActions';
+import axios from 'axios';
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -17,14 +18,14 @@ class RandomMovieSelectionList extends React.Component{
 
 	}
 	componentDidMount(){
-		this.setState({movies: this.props.movies})
+		this.updateList();
 	}
 	updateList(){
-		axios.get('http://54.221.40.5:8111/getmid?mid=1')
+		var that = this;
+				axios.get('http://54.221.40.5:8111/getmid?mid=1')
 		.then(movies => {
 			var recMovieList = movies.data.data.rec_list;
 			that.setState({movies: recMovieList});
-
 		}).catch(error => {
 			throw(error);
 		});
@@ -36,20 +37,18 @@ class RandomMovieSelectionList extends React.Component{
 	  	video.play();
 	}
 	render() {
-		console.log("I want to go back home!", this.state.movies);
 		return( 
 		<div>
-		{this.props.movies.map(function(m){
+		{this.state.movies.map(function(m){
 			return <img src={m.mimg} onClick={function(){
 				var video = document.getElementById('cur-video');
 				video.src= m.mlink;
 	  			video.load();
 	  			video.play();
-	  			that.setState({a:"1"});
 	  			this.updateList();
-	  		}
+	  		}.bind(this)
 	  		}/>
-		})}
+		},this)}
 		</div>
 		)
 	}

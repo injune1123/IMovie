@@ -29,6 +29,11 @@ h1,h2,h3,h4,h5,h6,p,span,a, a:focus, a:hover {
   z-index: 0;
 }
 
+#watch-video-page hr{
+  margin-top: 60px;
+  margin-bottom: 40px; 
+}
+
 
 /*for home page*/
 .hero .tint{
@@ -178,7 +183,7 @@ nav a, nav span{
   padding: 60px;
 }
 #cur-video{
-  width: 97vw;
+  width: 90vw;
 }
 
 #watch-video-page{
@@ -228,7 +233,8 @@ and (orientation : landscape) {
 #watch-video-page img{
   vertical-align: middle;
   width: 200px;
-  padding: 10px;
+  height: 120px;
+  padding: 0px 10px;
   border: 1px solid #B9F6CA;
   margin: 10px;
 }

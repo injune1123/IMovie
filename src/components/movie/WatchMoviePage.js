@@ -99,6 +99,7 @@ class WatchMoviePage extends React.Component{
 				  <source src={this.state.currentMovieLink} type="video/mp4"/>
 				  Your browser does not support HTML5 video.
 				</video>
+				<hr/>
 				<RandomMovieSelectionList/>
 				<StringRecommendation/>
 			</div>
