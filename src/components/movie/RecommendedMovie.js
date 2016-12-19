@@ -20,9 +20,14 @@ class RecommendedMovie extends React.Component{
 	saveCurMovieInfo(){
 		sessionStorage.currentMovieId=this.props.movie.mid;
 		sessionStorage.currentMovieLink=this.props.movie.mlink;
+<<<<<<< HEAD
 		var socket = io('http://54.221.40.5:6888');
 		  console.log('save');
 	      var data = {};
+=======
+		  console.log('saveCurMovieInfo');
+	      data = {};
+>>>>>>> ac8c3eddee3edc788999294b0e55343d2bfdceaa
 	      data['uid'] = sessionStorage.currentUserId;
 	      data['mid'] = sessionStorage.currentMovieId;
 	      data['epoch'] = new Date().getTime();

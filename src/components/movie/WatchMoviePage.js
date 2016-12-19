@@ -69,10 +69,9 @@ class WatchMoviePage extends React.Component{
     	if(that.state.last_m[that.state.last_m.length-3] === undefined || that.state.start > that.state.last_m[that.state.last_m.length-3] ) return;
    		console.log("this.state", that.state.last_m);
     	var data ={};
-    	var uid = that.state.uid;
 
  	   	data["watch_interval"]=that.state.start+":"+that.state.last_m[that.state.last_m.length-3];
-       	data["mid"]="mid"; 
+       	data["mid"]=that.state.mid; 
     	data["epoch"]=new Date().getTime();
     	data["uid"]=sessionStorage.currentUserId
 	    console.log("data", data);

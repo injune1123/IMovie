@@ -39,7 +39,7 @@ h1,h2,h3,h4,h5,h6,p,span,a, a:focus, a:hover {
   left: 0px;
 }
 
-#branding, #signin-wrapper, #signup-wrapper{
+#branding, #signin-wrapper, #signup-wrapper, .user-profile{
   padding:50px 60px;
   min-height: 100vh;
 }
