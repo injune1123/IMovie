@@ -11,17 +11,7 @@
 	<script type="text/javascript" charset="utf-8">
 	  var socket = io('http://54.221.40.5:6888');
 	  console.log('new connect');
-      data = {};
-      data['uid'] = "hello";
-      data['mid'] = 6565733;
-      data['epoch'] = new Date().getTime();
-      console.log('uid',data);
-      socket.emit('click_video', data);
-
-      socket.on('message', function(data){
-            res=JSON.parse(data);
-            console.log(data);
-      });
+       
     </script>
 </body>	
 </html>
